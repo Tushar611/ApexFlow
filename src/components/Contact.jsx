@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
-        <section className="py-32 bg-white relative" id="contact">
+        <section className="py-16 md:py-32 bg-white relative" id="contact">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -12,7 +12,7 @@ const Contact = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-premium-gold font-bold uppercase tracking-widest text-sm mb-4">Contact Us</h2>
-                        <h3 className="text-4xl md:text-6xl font-display font-bold text-premium-text mb-8">
+                        <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-premium-text mb-6 md:mb-8">
                             Let's Discuss Your <br /> Next Project
                         </h3>
                         <p className="text-gray-600 text-lg mb-12 leading-relaxed max-w-md">

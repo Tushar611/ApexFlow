@@ -35,12 +35,12 @@ const Stats = () => {
     ];
 
     return (
-        <section className="py-20 bg-premium-text text-white relative overflow-hidden">
+        <section className="py-10 md:py-20 bg-premium-text text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 border-b border-white/10 pb-16">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 md:mb-16 border-b border-white/10 pb-12 md:pb-16">
                     <div className="text-center">
                         <div className="text-4xl md:text-5xl font-bold text-premium-gold mb-2 font-display">
                             <Counter from={0} to={15} duration={1.5} />+

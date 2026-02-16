@@ -26,9 +26,9 @@ const reviews = [
 
 const Testimonials = () => {
     return (
-        <section id="testimonials" className="py-24 bg-gray-50">
+        <section id="testimonials" className="py-12 md:py-24 bg-gray-50">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full shadow-sm mb-6">
                         <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -42,7 +42,7 @@ const Testimonials = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6">What Our Clients Say</h2>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-neutral-900 mb-6">What Our Clients Say</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -5,7 +5,19 @@ import { ArrowDown } from 'lucide-react';
 const Hero = () => {
     const containerRef = useRef(null);
     const [currentFrame, setCurrentFrame] = useState(1);
+    const [isMobile, setIsMobile] = useState(false);
     const totalFrames = 40;
+
+    // Detect mobile for performance optimization
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -16,27 +28,32 @@ const Hero = () => {
     const smoothFrame = useSpring(frameIndex, { stiffness: 200, damping: 20 });
 
     useMotionValueEvent(smoothFrame, "change", (latest) => {
+        // Only update frames on non-mobile devices to prevent lag
+        if (isMobile) return;
+
         const frame = Math.round(latest);
         if (frame >= 1 && frame <= totalFrames) {
             setCurrentFrame(frame);
         }
     });
 
-    // Preload images for smooth playback
+    // Preload images for smooth playback (only on desktop)
     useEffect(() => {
+        if (isMobile) return;
+
         for (let i = 1; i <= totalFrames; i++) {
             const img = new Image();
             img.src = `/scroll_frames/ezgif-frame-${i.toString().padStart(3, '0')}.png`;
         }
-    }, []);
+    }, [isMobile]);
 
     return (
-        <section ref={containerRef} className="relative h-[400vh]">
+        <section ref={containerRef} className="relative h-screen md:h-[400vh]">
             <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
                 {/* Scroll Animation Background */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src={`/scroll_frames/ezgif-frame-${currentFrame.toString().padStart(3, '0')}.png`}
+                        src={`/scroll_frames/ezgif-frame-${isMobile ? '001' : currentFrame.toString().padStart(3, '0')}.png`}
                         alt="Background Animation"
                         className="w-full h-full object-cover"
                     />
@@ -99,14 +116,16 @@ const Hero = () => {
                     </motion.div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <motion.div
-                    className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                >
-                    <ArrowDown className="text-neutral-400 opacity-80" size={32} />
-                </motion.div>
+                {/* Scroll Indicator - Hide on mobile if no scroll effect */}
+                {!isMobile && (
+                    <motion.div
+                        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20"
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                    >
+                        <ArrowDown className="text-neutral-400 opacity-80" size={32} />
+                    </motion.div>
+                )}
             </div>
         </section>
     );

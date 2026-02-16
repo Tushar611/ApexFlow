@@ -145,7 +145,7 @@ const ServicesSwipe = () => {
                 </motion.div>
             </AnimatePresence>
 
-            <div className="container mx-auto px-6 z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center h-full py-20">
+            <div className="container mx-auto px-6 z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center h-full py-10 md:py-20">
 
                 <div className="text-left text-white">
                     <motion.span
@@ -162,7 +162,7 @@ const ServicesSwipe = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-display font-bold text-white mb-8 leading-tight"
+                        className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 md:mb-8 leading-tight"
                     >
                         {activeService.title}
                     </motion.h2>
