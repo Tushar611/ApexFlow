@@ -22,3 +22,8 @@
   background-color: var(--color-premium-black);
   color: var(--color-premium-text);
 }
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}

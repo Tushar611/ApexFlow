@@ -183,7 +183,7 @@ const ServicesSwipe = () => {
                     {/* Left Button */}
                     <button
                         onClick={handlePrev}
-                        className="absolute left-0 lg:-left-4 z-50 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-black transition-all cursor-pointer shadow-lg active:scale-95"
+                        className="absolute left-2 lg:-left-12 z-50 w-12 h-12 rounded-full border border-neutral-200 lg:border-white/30 flex items-center justify-center text-white bg-neutral-900 lg:bg-white/10 backdrop-blur-sm lg:hover:bg-white lg:hover:text-black transition-all cursor-pointer shadow-lg active:scale-95"
                     >
                         ←
                     </button>
@@ -204,7 +204,7 @@ const ServicesSwipe = () => {
                     {/* Right Button */}
                     <button
                         onClick={handleNext}
-                        className="absolute right-0 lg:-right-4 z-50 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-black transition-all cursor-pointer shadow-lg active:scale-95"
+                        className="absolute right-2 lg:-right-12 z-50 w-12 h-12 rounded-full border border-neutral-200 lg:border-white/30 flex items-center justify-center text-white bg-neutral-900 lg:bg-white/10 backdrop-blur-sm lg:hover:bg-white lg:hover:text-black transition-all cursor-pointer shadow-lg active:scale-95"
                     >
                         →
                     </button>
