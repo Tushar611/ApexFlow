@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Inter", "sans-serif";
+  --font-body: "Inter", "sans-serif";
+  --color-premium-black: #ffffff;
+  /* Rebranded to White base */
+  --color-premium-text: #09090b;
+  /* Zinc 950 - Almost Black */
+  --color-premium-gold: #b45309;
+  /* Darker Gold/Amber for readability against white */
+  --color-premium-gray: #f8fafc;
+  /* Slate 50 */
+  --color-premium-card: #ffffff;
+
+  --shadow-premium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-premium-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+:root {
+  font-family: var(--font-body);
+  background-color: var(--color-premium-black);
+  color: var(--color-premium-text);
+}
