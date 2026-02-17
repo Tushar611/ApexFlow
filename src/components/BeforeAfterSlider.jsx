@@ -74,7 +74,7 @@ const BeforeAfterSlider = () => {
                             src={beforeImage}
                             alt="Before Plumbing"
                             className="w-full h-full object-cover"
-                            style={{ width: '100vw', maxWidth: 'unset' }} // Trick to keep image fixed while container shrinks
+                            style={{ width: '100%', maxWidth: 'unset' }} // Use 100% to avoid scrollbar width issues
                             draggable="false"
                         />
                         <span className="absolute top-6 left-6 bg-red-500/90 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-sm">Before</span>
