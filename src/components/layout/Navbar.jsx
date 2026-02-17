@@ -9,7 +9,7 @@ const Navbar = () => {
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        const threshold = window.innerHeight * 3; // Approx length of Hero scroll
+        const threshold = window.innerHeight - 80; // Trigger just before Stats section
         setIsScrolled(latest > threshold);
     });
 
